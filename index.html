@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Codereview 4 - Weekly Planner</title>
+
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.15.0/css/all.css">
+    <link rel="stylesheet" href="styles/main.css">
+
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"><i class="fa fa-list"></i> MyPlanner</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="true" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse bg-dark" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Settings</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav d-flex flex-grow-1 justify-content-end">
+                    <li class="nav-item nav-pills me-2">
+                        <a class="nav-link active bg-secondary" href="index.html">Reset</a>
+                    </li>
+                    <li class="nav-item nav-pills">
+                        <a class="nav-link active bg-success" data-bs-toggle="modal" data-bs-target="#deliverModal" href="javascript:getTaskNr();">Generate new task</a>
+                    </li>
+                </ul>            
+            </div>
+        </div>
+    </nav>        
+    <!-- HEADER -->
+    <header> 
+        <div class="mt-5" id="header-bg">
+            <div class="col-sm-11 col-md-10 col-lg-9 col-xl-8 col-xxl-7 m-auto text-center bg-dark bg-opacity-50 rounded-3 p-5">
+                <h1 class="big-title text-light">My personal planner</h1>
+            </div>
+        </div>
+    </header>
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Tasks Container -->
+        <section class="content-container">                                                  
+            <div class="card border-0">
+                <div class="card-header mt-4 bg-transparent border-0">
+                    <div class="d-flex pt-2 align-items-center">
+                        <div class="flex-grow-1 text-start"><h2 class="med-title">Weekly Tasks</h2></div>
+                        <div class="small">Sort by priority: </div>
+                        <a class="symLink" href="javascript:sortByPriority('up');" id="sort"><i class="ps-1 fad fa-sort-amount-up"></i></a>
+                    </div>
+                </div>
+                <div class="card-body text-center mb-5">
+                    <!-- Card Container -->
+                    <div class="row justify-content-center" id="task-container">
+                    </div>
+                </div>
+                </div>
+        </section>
+        <!-- Modal for new twasks-->
+        <div class="modal fade" id="deliverModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="false">
+            <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="ModalLabel">Create a new task</h5>
+                <div class = "bg-info text-light py-1 px-2 rounded-3" id="taskID"></div>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body row">
+                    <div class="mb-3">
+                        <label for="TaskName" class="form-label">Topic of the task</label>
+                        <input type="text" class="form-control" id="TaskName" placeholder="Party !!!">
+                    </div>
+                        <div class="mb-3">
+                        <label for="text" class="form-label">explain to topic</label>
+                        <textarea class="form-control" id="text" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="PicTitle" class="form-label">Description for the picture</label>
+                        <input type="text" class="form-control" id="PicTitle" placeholder="...">
+                    </div>
+                    <div class="mb-3">
+                        <label for="Picture" class="form-label">Picture path</label>
+                        <input type="text" class="form-control" id="Picture" placeholder="../xxx.jpg">
+                    </div>
+                    <div class="mb-3">
+                        <label for="task-date" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="task-date" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="task-time" class="form-label">Time</label>
+                        <input type="time" class="form-control" id="task-time" placeholder="">
+                    </div>
+                    <div class="mb-3 col-4">
+                        <label for="PrioSelector" class="form-label">Priority:</label>
+                        <select class="form-select" id="PrioSelector">
+                            <option selected value="0">Null</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                            <option value="4">Four</option>
+                            <option value="5">Five</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                    <button type="button" class="btn btn-success" data-bs-toggle="modal" id="btnCreateTask">Done</button>
+                </div>
+            </div>
+            </div>
+        </div>
+    </main>
+    <!-- FOOTER -->
+    <footer class="bg-black text-white text-center py-2 fixed-bottom">
+        <p class="m-0">&copy; 2022 Copyright Peter (<a href="https://github.com/peru3232/">peru3232</a>)</p>
+    </footer>
+    <!-- PAGE END  -->
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="data/data.json"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+</html>

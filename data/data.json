@@ -1,0 +1,69 @@
+var taskData = `
+[{
+    "id": 0,
+    "title": "Take the dog for a walk",
+    "text": "most go out on everey weather - ohoh hope the sun will be shining! ",
+    "picture": "https://cdn.pixabay.com/photo/2016/02/19/15/46/labrador-retriever-1210559__340.jpg",
+    "picText": "dog",
+    "priority": 0,
+    "date": "2022-02-07",
+    "time": "at 16:00",
+    "open": true,
+    "delete": false
+  }, {
+    "id": 1,
+    "title": "Shopping with family",
+    "text": "will walking to the next supermarket for milk and bread",
+    "picture": "https://cdn.pixabay.com/photo/2016/03/02/20/13/grocery-1232944__340.jpg",
+    "picText": "shopping",
+    "priority": 0,
+    "date": "2022-02-08",
+    "time": "",
+    "open": true,
+    "delete": false
+  }, {
+    "id": 2,
+    "title": "Trip to the Hoellerer lake",
+    "text": "as soon as the weather is fine - maybe Alex, Yvonne and Simone want to come too?",
+    "picture": "https://cdn.pixabay.com/photo/2021/05/24/11/56/lake-6278825__340.jpg",
+    "picText": "lake",
+    "priority": 0,
+    "date": "2022-02-11",
+    "time": "at 10:30",
+    "open": true,
+    "delete": false
+  }, {
+    "id": 3,
+    "title": "visit grandma",
+    "text": "as soon as possibe! Have missed her - especally our son - and a incredible meal hehe",
+    "picture": "https://cdn.pixabay.com/photo/2021/01/06/07/33/old-woman-5893415__340.jpg",
+    "picText": "granny",
+    "priority": 0,
+    "date": "2022-02-13",
+    "time": "at 12:00",
+    "open": true,
+    "delete": false
+  }, {
+    "id": 4,
+    "title": "going to cinama",
+    "text": "New film from Quentin Tarantino from satturday on",
+    "picture": "https://cdn.pixabay.com/photo/2013/07/13/14/03/film-162029__340.png",
+    "picText": "cinema",
+    "priority": 0,
+    "date": "2022-02-13",
+    "time": "at 19:30",
+    "open": true,
+    "delete": false
+  }, {
+    "id": 5,
+    "title": "Depeche Mode concert !!!!",
+    "text": "Prime tickets here :-) ",
+    "picture": "https://cdn.pixabay.com/photo/2016/11/22/19/15/audience-1850119__340.jpg",
+    "picText": "concert",
+    "priority": 0,
+    "date": "2022-02-12",
+    "time": "at 18:00",
+    "open": true,
+    "delete": false
+}]
+`
