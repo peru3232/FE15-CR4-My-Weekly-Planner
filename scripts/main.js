@@ -42,6 +42,10 @@ function addTask(obj) {
 `
 }
 
+// <div class="row align-items-center">
+//     <a class="symLink col-1" href="#noAction"><i class="fad fa-calendar-alt me-2 task-title"></i></a><span class="col-4">Deadline: </span><input type="date" class="col-6" id="task-date" value="${obj.date}"> ${obj.time}
+// </div>
+
 
 function deleteTask(index) {
     // access to needed elements
