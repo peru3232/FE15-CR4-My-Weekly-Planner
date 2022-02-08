@@ -170,15 +170,15 @@ function sortByPriority(x) {
     switch(x){
         case "up": //prio direction from highest to low
             sortElement.outerHTML = `<a class="symLink" href="javascript:sortByPriority('down');" id="sort"><i class="ps-1 fad fa-sort-amount-down"></i></a>`;      
-            compareList.sort((a, b) => a.prio < b.prio);
+            compareList.sort((a, b) => b.prio - a.prio);
             break;
         case "down": //prio direction from lowest to high
             sortElement.outerHTML = `<a class="symLink" href="javascript:sortByPriority('no');" id="sort"><i class="ps-1 far fa-bars"></i></a>`;
-            compareList.sort((a, b) => b.prio < a.prio);
+            compareList.sort((a, b) => a.prio - b.prio);
             break;
         default: //standard -> from lowest to highest ID
             sortElement.outerHTML = `<a class="symLink" href="javascript:sortByPriority('up');" id="sort"><i class="ps-1 fad fa-sort-amount-up"></i></a>`;
-            compareList.sort((a, b) => a.id > b.id);
+            compareList.sort((a, b) => a.id - b.id);
     }
     //update the task list with the comparelist
     for (index in actTaskList) {
