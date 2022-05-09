@@ -4,7 +4,7 @@ This project consists only a landing page. HTML with bootstrap, SCSS and JS were
 
 To view the pages simply clone this repo then open index.html in your browser.
 
-This project was done as a solution to a end of the week project during my fullstack course at code factory - the focus for this project was the usage of JS.
+This project was done as a solution to a end of the week project during my fullstack course at code factory - the focus for this project was the usage of JS and JSON.
 
 Please view the assignment.pdf to view the expected results.
 
